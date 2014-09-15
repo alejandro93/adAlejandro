@@ -1,0 +1,19 @@
+Añadimos repositorio para instalar oracle-java7-installer:
+sudo apt-add-repository ppa:webypd8team/java
+
+Paquetes y programas instalados:
+oracle-java7-installer (jdk)
+
+monodevelop
+monodevelop-nunit
+monodevelop-versioncontrol
+monodoc-browser
+monodoc-gtk2.0-manual
+monodoc-mysql-manual
+monodoc-nunit-manual
+
+Descarga desde la página de bitnami de:
+bitnami-lampstack-5.4.32-0-linux-x64-installer.run
+Poner bit de ejecución y hacer doble clic
+Pide contraseña para mysql root: sistemas
+
