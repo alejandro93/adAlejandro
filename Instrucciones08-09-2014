@@ -1,0 +1,29 @@
+Instalamos desde el synaptic:
+git
+
+Crear repositorio en github: adAlejandro
+
+Clonamos nuestro home:
+git clone https://github.com/alejandro93/adAlejandro.git
+
+Antes de confirmar (git commit ...) debemos haber configurado nuestro git:
+git config --global user.email alejandro93
+git config --global user.email alejandrobp93@gmail.com
+
+Para comprobar los datos:
+git config --list
+
+Para preparar los archivos:
+git add nombredelarchivo
+git add . (para preparar todos)
+
+Hacer commit:
+git commit -m "Asunto"
+
+Subir nuevos archivos:
+git push
+
+Desde el Bitnami LAMP: phpMyAdmin
+Creada base de datos dbprueba
+Creada tabla categoria e insertados 3 registros
+
