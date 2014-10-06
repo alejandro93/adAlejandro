@@ -10,18 +10,23 @@
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
     <action-group name="Default">
+      <action id="refreshAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-refresh</property>
+        <signal name="Activated" handler="OnRefreshActionActivated" />
+      </action>
       <action id="addAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
         <property name="StockId">gtk-add</property>
         <signal name="Activated" handler="OnAddActionActivated" />
       </action>
-      <action id="refreshAction">
+      <action id="deleteAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes" />
-        <property name="StockId">gtk-refresh</property>
-        <signal name="Changed" handler="OnRefreshActionChanged" />
-        <signal name="Activated" handler="OnRefreshActionActivated" />
+        <property name="StockId">gtk-delete</property>
+        <signal name="Activated" handler="OnDeleteActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -37,8 +42,9 @@
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
             <node name="toolbar" type="Toolbar">
-              <node type="Toolitem" action="addAction" />
               <node type="Toolitem" action="refreshAction" />
+              <node type="Toolitem" action="addAction" />
+              <node type="Toolitem" action="deleteAction" />
             </node>
           </widget>
           <packing>
@@ -49,14 +55,14 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+          <widget class="Gtk.ScrolledWindow" id="scrolledwindow1">
             <property name="MemberName" />
+            <property name="CanFocus">True</property>
             <property name="ShadowType">In</property>
             <child>
               <widget class="Gtk.TreeView" id="treeView">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="ShowScrollbars">True</property>
               </widget>
             </child>
           </widget>
