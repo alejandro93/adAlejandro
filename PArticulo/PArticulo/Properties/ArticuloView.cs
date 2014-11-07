@@ -35,13 +35,8 @@ namespace PArticulo
 				App.Instance.DbConnection.CreateCommand ();
 			dbCommand.CommandText = String.Format (
 				"update categoria set nombre=@nombre where id={0}", id
-
+				//falta anyadir update a los demás campos
 				);
-
-			//IDbDataParameter dbDataParameter = dbCommand.CreateParameter ();
-			//dbDataParameter.ParameterName = "nombre";
-			//dbDataParameter.Value = entryNombre.Text;
-			//dbCommand.Parameters.Add (dbDataParameter);
 
 			DbCommandExtensions.AddParameter (dbCommand, "nombre", entryNombre.Text);
 //			DbCommandExtensions.AddParameter (dbCommand, "categoria", entryCategoria.Text);
