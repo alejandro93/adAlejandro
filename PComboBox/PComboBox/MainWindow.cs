@@ -41,7 +41,8 @@ public partial class MainWindow: Gtk.Window
 
 		TreeIter actualTreeIter;
 		listStore.GetIterFirst (out actualTreeIter);
-		listStore.GetValue (actualTreeIter, 0);
+//		listStore.GetValue (actualTreeIter, 0);
+		listStore.IterNext (ref actualTreeIter);
 
 
 		propertiesAction.Activated += delegate {
