@@ -16,7 +16,7 @@ public partial class MainWindow: Gtk.Window
 
 
 
-		int idCategoria = 3;
+		int idCategoria = -1;
 //		CellRendererText cellRendererText = new CellRendererText ();
 //		comboBox.PackStart (cellRendererText, false);
 //		comboBox.AddAttribute (cellRendererText, "text", 0);
@@ -28,9 +28,7 @@ public partial class MainWindow: Gtk.Window
 		TreeIter treeIterZero = listStore.AppendValues (0, "<<Vacío>>");
 
 		foreach (Categoria categoria in categorias) {
-			TreeIter currentTreeIter = listStore.AppendValues (categoria.Id, categoria.Nombre);
-			if (categoria.Id == idCategoria)
-				treeIterZero = currentTreeIter;
+			listStore.AppendValues (categoria.Id, categoria.Nombre);
 		}
 //		listStore.AppendValues (1, "Uno");
 //		listStore.AppendValues (2, "Dos");
@@ -42,7 +40,14 @@ public partial class MainWindow: Gtk.Window
 		TreeIter actualTreeIter;
 		listStore.GetIterFirst (out actualTreeIter);
 //		listStore.GetValue (actualTreeIter, 0);
-		listStore.IterNext (ref actualTreeIter);
+//		listStore.IterNext (ref actualTreeIter);
+		do {
+			if (idCategoria.Equals(listStore.GetValue(actualTreeIter, 0)) ){
+				comboBox.SetActiveIter (actualTreeIter);
+				break;
+			}
+		}	
+		while (listStore.IterNext (ref actualTreeIter));
 
 
 		propertiesAction.Activated += delegate {
