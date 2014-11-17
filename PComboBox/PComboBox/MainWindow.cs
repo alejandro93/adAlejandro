@@ -1,6 +1,7 @@
-using System;
 using Gtk;
-using System.Collections.Generic;
+using System;
+
+using SerpisAd;
 
 public partial class MainWindow: Gtk.Window
 {	
@@ -8,54 +9,13 @@ public partial class MainWindow: Gtk.Window
 	{
 		Build ();
 
-		List<Categoria> categorias = new List<Categoria> ();
-		categorias.Add (new Categoria (1, "uno"));
-		categorias.Add (new Categoria (2, "dos"));
-		categorias.Add (new Categoria (3, "tres"));
-		categorias.Add (new Categoria (4, "cuatro"));
-
-
-
-		int idCategoria = -1;
-//		CellRendererText cellRendererText = new CellRendererText ();
-//		comboBox.PackStart (cellRendererText, false);
-//		comboBox.AddAttribute (cellRendererText, "text", 0);
-		CellRendererText cellRendererText2 = new CellRendererText ();
-		comboBox.PackStart (cellRendererText2, false);
-		comboBox.AddAttribute (cellRendererText2, "text", 1 );
-		ListStore listStore = new ListStore (typeof(int), typeof(string));
-
-		TreeIter treeIterZero = listStore.AppendValues (0, "<<Vacío>>");
-
-		foreach (Categoria categoria in categorias) {
-			listStore.AppendValues (categoria.Id, categoria.Nombre);
-		}
-//		listStore.AppendValues (1, "Uno");
-//		listStore.AppendValues (2, "Dos");
-
-		comboBox.Model = listStore;
-
-		comboBox.SetActiveIter (treeIterZero);
-
-		TreeIter actualTreeIter;
-		listStore.GetIterFirst (out actualTreeIter);
-//		listStore.GetValue (actualTreeIter, 0);
-//		listStore.IterNext (ref actualTreeIter);
-		do {
-			if (idCategoria.Equals(listStore.GetValue(actualTreeIter, 0)) ){
-				comboBox.SetActiveIter (actualTreeIter);
-				break;
-			}
-		}	
-		while (listStore.IterNext (ref actualTreeIter));
-
+		new ComboBoxHelper (comboBox, (ulong)7, "select id, nombre from categoria");
+		//new ComboBoxHelper (comboBox, null, "select id, nombre from categoria");
 
 		propertiesAction.Activated += delegate {
-			TreeIter treeIter;
-			bool activaIter = comboBox.GetActiveIter(out treeIter);
-			object id = activaIter ? listStore.GetValue (treeIter, 0) : 0;
-			Console.WriteLine("id = {0}", id);
+			Console.WriteLine("id={0}", comboBox.GetId());
 		};
+
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -65,12 +25,12 @@ public partial class MainWindow: Gtk.Window
 	}
 }
 
-public class Categoria{
-	public Categoria (int id, string nombre){
+public class Categoria {
+	public Categoria(int id, string nombre) {
 		Id = id;
 		Nombre = nombre;
 	}
-	public int Id { get; set; }
-	public string Nombre { get; set; }
+	public int Id { get; private set;}
+	public string Nombre { get; private set;}
 
 }
