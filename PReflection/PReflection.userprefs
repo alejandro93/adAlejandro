@@ -1,25 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PReflection/Properties/Validator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PReflection/MainWindow.cs">
     <Files>
       <File FileName="PReflection/Program.cs" Line="1" Column="1" />
-      <File FileName="PReflection/MainWindow.cs" Line="26" Column="4" />
-      <File FileName="PReflection/Categoria.cs" Line="10" Column="13" />
+      <File FileName="PReflection/MainWindow.cs" Line="49" Column="80" />
+      <File FileName="PReflection/Categoria.cs" Line="1" Column="1" />
       <File FileName="PReflection/Articulo.cs" Line="1" Column="1" />
       <File FileName="PReflection/IdAttribute.cs" Line="1" Column="1" />
       <File FileName="PReflection/EntityAttribute.cs" Line="1" Column="1" />
-      <File FileName="PReflection/ValidationAttribute.cs" Line="7" Column="48" />
-      <File FileName="PReflection/NotBlankAttribute.cs" Line="12" Column="16" />
-      <File FileName="PReflection/ErrorInfo.cs" Line="10" Column="16" />
-      <File FileName="PReflection/Properties/Validator.cs" Line="18" Column="1" />
+      <File FileName="PReflection/ValidationAttribute.cs" Line="1" Column="1" />
+      <File FileName="PReflection/NotBlankAttribute.cs" Line="1" Column="1" />
+      <File FileName="PReflection/ErrorInfo.cs" Line="1" Column="1" />
+      <File FileName="PReflection/Validator.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="PReflection" expanded="True">
-            <Node name="Properties" expanded="True">
-              <Node name="Validator.cs" selected="True" />
-            </Node>
+            <Node name="MainWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>

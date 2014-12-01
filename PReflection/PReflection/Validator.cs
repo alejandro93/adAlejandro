@@ -13,7 +13,7 @@ namespace PReflection
 			foreach (FieldInfo field in fields) 
 				if (field.IsDefined (typeof(ValidationAttribute), true)) {
 					ValidationAttribute validationAttribute =
-					(ValidationAttribute)Attribute.GetCustomAttribute (type, typeof(ValidationAttribute),true);
+					(ValidationAttribute)Attribute.GetCustomAttribute (field, typeof(ValidationAttribute),true);
 					object value = field.GetValue (obj);
 					string message = validationAttribute.Validate (value);
 					if (message != null) {

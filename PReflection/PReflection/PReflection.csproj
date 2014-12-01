@@ -76,7 +76,7 @@
     <Compile Include="ValidationAttribute.cs" />
     <Compile Include="NotBlankAttribute.cs" />
     <Compile Include="ErrorInfo.cs" />
-    <Compile Include="Properties\Validator.cs" />
+    <Compile Include="Validator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

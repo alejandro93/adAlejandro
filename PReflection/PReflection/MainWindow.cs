@@ -23,9 +23,9 @@ public partial class MainWindow: Gtk.Window
 ////				Console.WriteLine ("type.Name={0}", type.Name);
 //			}
 		Categoria categoria = new Categoria (33, "");
-		Validate (categoria);
+		validate (categoria);
 		categoria.Nombre = "algo";
-		Validate (categoria);
+		validate (categoria);
 //		showValues (categoria);
 
 
@@ -41,12 +41,12 @@ public partial class MainWindow: Gtk.Window
 		}
 
 	}
-	private void Validate(object obj){
-		ErrorInfo[] errorInfo = Validator.Validate (obj);
-		if (errorInfo.Length == 0)
+	private void validate(object obj){
+		ErrorInfo[] errorInfos = Validator.Validate (obj);
+		if (errorInfos.Length == 0)
 			Console.WriteLine ("Sin errores");
-		foreach (ErrorInfo errorInfos in errorInfo) {
-			Console.WriteLine ("property={0} message={1}", errorInfos.Property, errorInfos.Message);
+		foreach (ErrorInfo errorInfo in errorInfos) {
+			Console.WriteLine ("property={0} message={1}", errorInfo.Property, errorInfo.Message);
 		}
 	}
 	private void showInfo(Type type){
