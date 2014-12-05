@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../adLuis/PArticulo/PArticulo/ListArticuloView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PArticulo/MainWindow.cs">
     <Files>
       <File FileName="PArticulo/MainWindow.cs" Line="1" Column="1" />
       <File FileName="../../adLuis/PArticulo/PArticulo/ListArticuloView.cs" Line="1" Column="1" />
