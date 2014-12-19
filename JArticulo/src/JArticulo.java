@@ -127,7 +127,7 @@ public class JArticulo {
 		Statement listar = connection.createStatement();
 		resultSet = listar.executeQuery("select * from categoria");
 		while(resultSet.next()){
-			System.out.printf("id=%4d    nombre=%4s\n", resultSet.getObject("id"), resultSet.getObject("nombre"));
+			System.out.printf("id=%-4d    nombre=%-10s\n", resultSet.getObject("id"), resultSet.getObject("nombre"));
 		}
 		listar.close();
 		resultSet.close();
@@ -139,7 +139,7 @@ public class JArticulo {
 		Statement listar = connection.createStatement();
 		resultSet = listar.executeQuery("select * from categoria");
 		while(resultSet.next()){
-			System.out.printf("|id=%4d nombre=  %4s   precio=%4d   categoria=  %4s|\n", resultSet.getObject("id"), resultSet.getObject("nombre"), resultSet.getObject("precio"), resultSet.getObject("cat"));
+			System.out.printf("|id=%-4d nombre=%-10s precio=%-6d categoria=%-10s|\n", resultSet.getObject("id"), resultSet.getObject("nombre"), resultSet.getObject("precio"), resultSet.getObject("cat"));
 		}
 		listar.close();
 		connection.close();
