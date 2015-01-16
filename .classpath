@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JArticulo/src"/>
+	<classpathentry kind="src" path="JMySql/src"/>
+	<classpathentry kind="src" path="JVector/src"/>
+	<classpathentry kind="src" path="JVector/test"/>
+	<classpathentry kind="lib" path="JMySql/build/libs/JMySql.jar"/>
+	<classpathentry kind="lib" path="JMySql/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="JVector/bin"/>
+</classpath>
