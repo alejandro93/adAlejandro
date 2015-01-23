@@ -18,6 +18,8 @@ public class HibernateCategoria {
 		persistNuevasCategorias();
 		
 		showCategorias();
+		//deleteCategorias(61);
+		//editCategorias(3);
 		entityManagerFactory.close();
 	}
 	
@@ -44,5 +46,28 @@ public class HibernateCategoria {
 		entityManager.getTransaction().commit();
 		entityManager.close();
 	}
+	
+	public static void deleteCategorias(long id){
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		entityManager.getTransaction().begin();
+		
+		Categoria categoria = entityManager.find(Categoria.class, id);
+		entityManager.remove(categoria);
+		entityManager.getTransaction().commit();
+		entityManager.close();
 
+	}
+	
+	public static void editCategorias(long id){
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		entityManager.getTransaction().begin();
+		
+		Categoria categoria = entityManager.find(Categoria.class, id);
+		categoria.setNombre("Prueba");
+		entityManager.merge(categoria);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+	}
+	
+	
 }
