@@ -14,12 +14,13 @@ public class HibernateCategoria {
 		entityManagerFactory = Persistence.createEntityManagerFactory("serpis.ad.jpa.mysql");
 		
 		showCategorias();
-		System.out.println("Prueba añadido categorias: "+ new Date());
-		persistNuevasCategorias();
+		//System.out.println("Prueba añadido categorias: "+ new Date());
+		//persistNuevasCategorias();
 		
+		
+		//deleteCategorias((long)63);
+		//editCategorias((long)3);
 		showCategorias();
-		//deleteCategorias(61);
-		//editCategorias(3);
 		entityManagerFactory.close();
 	}
 	
@@ -29,7 +30,7 @@ public class HibernateCategoria {
 		
 		List <Categoria> categorias = entityManager.createQuery("from Categoria", Categoria.class).getResultList();
 		for (Categoria categoria : categorias){
-			System.out.printf("id=%d nombre=%s\n ", categoria.getId(), categoria.getNombre());
+			System.out.printf(" id=%d nombre=%s\n", categoria.getId(), categoria.getNombre());
 		}
 		entityManager.getTransaction().commit();
 		entityManager.close();
@@ -55,7 +56,6 @@ public class HibernateCategoria {
 		entityManager.remove(categoria);
 		entityManager.getTransaction().commit();
 		entityManager.close();
-
 	}
 	
 	public static void editCategorias(long id){
